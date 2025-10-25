@@ -31,17 +31,17 @@ const std = @import("std");
 const Exception = @import("exception").Exception;
 
 // define your specific alias:
-const MyError = error{ NotFound, Invalid };
+const MyError = error{ Zero, Negetive };
 
 // result might be i32 if success; return MyError and message if error:
 const ResultI32 = Exception(i32, MyError, []const u8);
 
 pub fn foo(x: i32) ResultI32 {
     if (x < 0) {
-        return ResultI32.err(MyError.Invalid, "x was negative");
+        return ResultI32.err(MyError.Negetive, "x was negative");
     }
     if (x == 0) {
-        return ResultI32.err(MyError.NotFound, "x was zero");
+        return ResultI32.err(MyError.Zero, "x was zero");
     }
     return ResultI32.ok(x * 2);
 }
