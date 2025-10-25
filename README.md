@@ -30,7 +30,6 @@ zig build test
 const std = @import("std");
 const Exception = @import("exception").Exception;
 
-// define your specific alias:
 const MyError = error{ Zero, Negetive };
 
 // result might be i32 if success; return MyError and message if error:
@@ -63,7 +62,7 @@ pub fn main() !void {
     std.debug.print("\nCase: x = 10\n", .{});
 
     const val = r2.get() catch |e| {
-        std.debug.print("Caught error from .get(): {s}\n", .{@errorName(e)});
+        std.debug.print("Error tag: {s}\n", .{@errorName(e)});
         return;
     };
     std.debug.print("Success value (x * 2): {d}\n", .{val});
