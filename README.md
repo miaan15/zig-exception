@@ -71,7 +71,7 @@ pub fn main() !void {
 ```
 ```
 Case: x = -5
-Error tag: Invalid
+Error tag: Negetive
   payload: "x was negative"
 
 Case: x = 10
