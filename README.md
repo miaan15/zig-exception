@@ -1,3 +1,5 @@
+oh god this should be named "expected" because it is how c++ name but f* that
+
 # zig-exception
 
 A small generic result/exception wrapper for [Zig](https://ziglang.org).  
